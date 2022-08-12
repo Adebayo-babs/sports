@@ -155,7 +155,7 @@ router.post('/latestnews', upload.single('image'), (req, res)=>{
     let errors = [];
 
     if(errors.length > 0){
-        res.render('latestNews', {
+        res.render('latestnews', {
             errors,
             title, subtitle, category, article
         });
