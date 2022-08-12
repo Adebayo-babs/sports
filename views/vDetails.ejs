@@ -1,0 +1,29 @@
+<%- include ('partials/header') %>
+
+<div class="realtor_list">
+   
+    <% record.forEach(function(records){ %>
+
+    <section class="home">
+        <div class="content">
+        <h3><%= records.title %></h3>
+        <span><%= records.subtitle %></span>
+    </div>
+    <div class="image">
+        <img src="data:image/<%=records.upload.contentType%>;base64,<%=records.upload.data.toString('base64')%>" class="card-img-top" alt="...">
+    </div>
+
+    <div class="content">
+        <p><%= records.article %></p>
+        <small>Posted On: <%= records.date.toLocaleDateString() %></small>
+    </div>
+
+</section>
+    
+    <% }) %>
+</div>
+
+
+
+<%- include ('partials/footer') %>
+

@@ -1,0 +1,72 @@
+<%- include ('partials/header') %>
+
+
+<% if (typeof error != 'undefined') { %>
+
+        <% error.forEach(function(error){ %>
+
+              <h5 style="color: red;"><%= error.msg %></h5>
+
+        <% }) %>
+
+      <% } %>
+
+      <% if(success_msg != '') {%>
+        <h6 style="color:green"><%= success_msg %></h6>
+
+      <% } %>
+
+      <% if(error_msg != '') { %>
+
+        <h6 style="color:red"><%= error_msg %></h6>
+
+      <% } %>
+
+      
+<div class="form-1">
+		<h2>Edit Latest News</h2>
+			
+			<% record.forEach((r) => { %>
+
+				<form action="/admin/edit/<%= r._id %>" method="post" enctype="multipart/form-data">
+					<p> <input type="text" name="title" value="<%= r.title %>"></p>
+					<p> <input type="text" name="subtitle" value="<%= r.subtitle %>"></p>
+
+					<% let sportTitle = ["Football", "Athletics", "Boxing", "Tennis", "Wrestling", "Formula1", "Basketball"] %>
+              <select name="title" id="" class="sport">
+                  <option value="">Select Sport Category</option>
+                      <% sportTitle.forEach(function(stitle){ %>
+      
+                          <option value="<%= r.stitle %>"><%= stitle %></option>
+      
+                      <% }) %>
+                  
+      
+              </select><br>
+
+					<label for="article">Article : </label>   
+          <p><textarea name="article" id="article" cols="53" rows="5"><%=r.article%></textarea></p>
+
+
+                    <!-- <p class="validationErrors"><%= typeof errors == 'undefined' ? '' : typeof errors.article == 'undefined' ? '' : errors.article.msg %></p> -->
+          
+<!--           	<img src="/uploads/<%= r.image %>" alt="Article Image"> 
+ -->
+          	<p>Update profile picture: <input type="file" name="image"></p>
+          
+
+<!--           <p>Image: <input type="file" name="image" value="<%= r.image %>"></p>
+ -->      		
+      		<input type="submit" name="" value="Update Article">
+					
+				</form>
+
+
+			<% }) %>
+			</div>
+
+
+			
+
+<%- include ('partials/footer') %>
+

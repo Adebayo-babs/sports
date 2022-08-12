@@ -1,0 +1,46 @@
+<%- include ('partials/header') %>
+<%- include ('partials/messages') %>
+
+
+<center>
+   <h1 class="heading">
+        <span>Welcome</span>
+        <span><%= username %></span>
+    </h1>
+    <a href="/admin/someMes" class="btn">MESSAGES</a>
+    <h3><a href="/" class="btn btn-info">Sign Out</a></h3>
+
+</center>
+
+
+    <%- include ('partials/messages') %>
+
+   
+    <% record.forEach(function(records){ %>
+    <div class="logo_2">
+     <img src="data:image/<%=records.upload.contentType%>;base64,<%=records.upload.data.toString('base64')%>" 
+     width="200" height="200">
+    </div>
+    <p>Fullnames: <b><%= records.cName %></b> </p>
+    <p>Email: <b><%= records.cEmail %></b></p>
+    <p>Registered date: <%= records.date.toLocaleDateString() %></p>
+    
+    
+    <a href="/admin/new" class="btn">LATEST NEWS</a>
+    <a href="/admin/sports/NigeriaFootball" class="btn">NIGERIA FOOTBALL NEWS</a>
+    <a href="/admin/sports/IntFootball" class="btn">INTERNATIONAL FOOTBALL NEWS</a>
+    <a href="/admin/sports/Athletics" class="btn">ATHLETICS</a>
+    <a href="/admin/sports/Boxing" class="btn">BOXING</a>
+    <a href="/admin/sports/Tennis" class="btn">TENNIS</a>
+    <a href="/admin/sports/Wrestling" class="btn">WRESTLING</a>
+    <a href="/admin/sports/Formula1" class="btn">FORMULA1</a>
+    <a href="/admin/sports/Basketball" class="btn">BASKETBALL</a>
+
+    
+    
+    
+    <% }) %>
+
+
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,33 @@
+<%- include('partials/header') -%>
+<section class="contact" id="contact">
+    
+    <h1 class="heading">
+        <span>m</span>
+        <span>e</span>
+        <span>s</span>
+        <span>s</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/smile.png" alt="">
+        </div>
+
+        <form action="/contactUs" method="POST">
+
+            <div class="inputBox">
+                <input type="email" name="mail" placeholder="email" autocomplete="off" required>
+            </div>
+            <textarea placeholder="message" name="message" cols="30" rows="10" required></textarea>
+            <input type="submit" class="btn" value="send message">
+        </form>
+
+    </div>
+    
+</section>
+<%- include('partials/footer') -%>
+

@@ -1,0 +1,37 @@
+
+
+<%- include ('partials/header') %>
+<center>
+<div class="row">
+        <h1 class="heading">
+        <span>S</span>
+        <span>I</span>
+        <span>G</span>
+        <span>N</span>
+        <span>U</span>
+        <span>P</span>
+        <span>N</span>
+        <span>O</span>
+        <span>W</span>
+    </h1>
+        <form action="/admin/sig" method="POST" class="pt-3" enctype="multipart/form-data">
+            <div class="inputBox">
+                <input type="text" name="cName"  placeholder="Full Names">
+                <input type="email" name="cEmail"  placeholder="Email">
+                <p><input type="text" name="username"  placeholder="Username"></p>
+            </div>
+            
+            <div class="inputBox">
+                <input type="password" name="password" placeholder="password">
+                <input type="password" name="password2" placeholder="Confirm password">
+            </div>
+            <div class="inputBox">
+                <p>Profile Picture: <input type="file" name="image" placeholder="Upload your company Logo"></p>
+            </div>
+            <button type="submit" class="btn">Signup</button>
+        </form>
+
+    </div>
+</center>
+<%- include('partials/footer') %>
+
